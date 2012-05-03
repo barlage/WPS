@@ -1584,6 +1584,39 @@ WRF_LIB         =       $(WRF_DIR)/external/io_grib1/libio_grib1.a \
                         $(WRF_DIR)/external/io_netcdf/libwrfio_nf.a \
                         $(NETCDF)/lib/libnetcdf.lib
 
+###########################################################
+#ARCH	PC Linux x86_64, IBM POE, Intel compiler	DM parallel, NO GRIB2
+#
+COMPRESSION_LIBS	=
+COMPRESSION_INC		=
+FDEFS			=
+FC		=	mpfort -compiler intel
+SFC		=	ifort
+FFLAGS		=	-FR -convert big_endian
+F77FLAGS	=	-FI -convert big_endian
+FNGFLAGS	=	$(FFLAGS)
+LDFLAGS		=	
+CC		=	mpcc -compiler intel
+SCC		=	icc
+CFLAGS		=	-w
+CPP		=	/lib/cpp -C -P -traditional
+CPPFLAGS	=	-D_UNDERSCORE -DBYTESWAP -DLINUX -DIO_NETCDF -DIO_BINARY -DIO_GRIB1 -D_MPI -DBIT32
+
+###########################################################
+#ARCH	PC Linux x86_64, IBM POE, Intel compiler	DM parallel
+#
+FC		=	mpfort -compiler intel
+SFC		=	ifort
+FFLAGS		=	-FR -convert big_endian
+F77FLAGS	=	-FI -convert big_endian
+FNGFLAGS	=	$(FFLAGS)
+LDFLAGS		=	
+CC		=	mpcc -compiler intel
+SCC		=	icc
+CFLAGS		=	-w
+CPP		=	/lib/cpp -C -P -traditional
+CPPFLAGS	=	-D_UNDERSCORE -DBYTESWAP -DLINUX -DIO_NETCDF -DIO_BINARY -DIO_GRIB1 -D_MPI -DBIT32
+
 ##################################################################
 #ARCH	NULL
 
