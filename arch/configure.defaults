@@ -1587,8 +1587,6 @@ WRF_LIB         =       $(WRF_DIR)/external/io_grib1/libio_grib1.a \
 ###########################################################
 #ARCH	PC Linux x86_64, IBM POE, Intel compiler	DM parallel, NO GRIB2
 #
-COMPRESSION_LIBS	=
-COMPRESSION_INC		=
 FDEFS			=
 FC		=	mpfort -compiler intel
 SFC		=	ifort
@@ -1605,6 +1603,8 @@ CPPFLAGS	=	-D_UNDERSCORE -DBYTESWAP -DLINUX -DIO_NETCDF -DIO_BINARY -DIO_GRIB1 -
 ###########################################################
 #ARCH	PC Linux x86_64, IBM POE, Intel compiler	DM parallel
 #
+COMPRESSION_LIBS    = -L$(JASPERLIB) -ljasper -lpng -lz
+COMPRESSION_INC     = -I$(JASPERINC)
 FC		=	mpfort -compiler intel
 SFC		=	ifort
 FFLAGS		=	-FR -convert big_endian

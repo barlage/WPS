@@ -234,8 +234,8 @@ CC_TOOLS            =
 ########################################################################################################################
 #ARCH    Linux x86_64, IBM POE, Intel compiler   # serial serial_NO_GRIB2 dmpar dmpar_NO_GRIB2
 #
-COMPRESSION_LIBS    = CONFIGURE_COMP_L
-COMPRESSION_INC     = CONFIGURE_COMP_I
+COMPRESSION_LIBS    = -L$(JASPERLIB) -ljasper -lpng -lz
+COMPRESSION_INC     = -I$(JASPERINC)
 FDEFS               = CONFIGURE_FDEFS
 SFC                 = ifort
 SCC                 = icc
