@@ -1442,11 +1442,7 @@ integer, parameter :: BDR_WIDTH = 3
       real :: rx, ry, temp
       real, pointer, dimension(:,:) :: data_count
       type (fg_input) :: mask_field, mask_water_field, mask_land_field
-      
-      ! CWH Initialize local pointer variables
-      nullify(interp_array)
-      nullify(data_count)
-      
+
       ! CWH Initialize local pointer variables
       nullify(interp_array)
       nullify(data_count)
